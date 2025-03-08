@@ -113,4 +113,3 @@ if(GPIO_ReadInputDataBit(GPIOX_DATA,PIN_DATA)) {
 GPIO_WriteBit(GPIOX_CLK,PIN_CLK,0);
 return 0;
 ```
-```
