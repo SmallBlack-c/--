@@ -20,18 +20,18 @@ void I2C_Init_Inmode()
 {
 	GPIO_InitTypeDef GPIO_InitStruct;
 	GPIO_InitStruct.Pin = PIN_DATA;
-	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	GPIO_InitStruct.Pull = GPIO_PULLUP;
-	HAL_GPIO_Init(GPIOX_DATA, &GPIO_InitStruct);	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOX_DATA, &GPIO_InitStructure);	
 }
-void I2C_Signal_Start()//在时钟高电平是，产生一个下降沿信号
+void I2C_Signal_Start()//鍦ㄦ椂閽熼珮鐢靛钩鏄紝浜х敓涓�涓笅闄嶆部淇″彿
 {
 	GPIO_WriteBit(GPIOX_DATA,PIN_DATA,1);
 	GPIO_WriteBit(GPIOX_CLK,PIN_CLK,1);
 	GPIO_WriteBit(GPIOX_DATA,PIN_DATA,0);
 	GPIO_WriteBit(GPIOX_CLK,PIN_CLK,0);
 }
-void I2C_Signal_Stop()//在时钟高电平是，产生一个上升沿信号
+void I2C_Signal_Stop()//鍦ㄦ椂閽熼珮鐢靛钩鏄紝浜х敓涓�涓笂鍗囨部淇″彿
 {
 	GPIO_WriteBit(GPIOX_DATA,PIN_DATA,0);
 	GPIO_WriteBit(GPIOX_CLK,PIN_CLK,1);
