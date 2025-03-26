@@ -38,10 +38,10 @@ GPIO_SetBits(GPIOX_CLK,PIN_CLK);
 #### 输入模式
 ```c
 GPIO_InitTypeDef GPIO_InitStruct;
-GPIO_InitStruct.Pin = PIN_DATA;
-GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-GPIO_InitStruct.Pull = GPIO_PULLUP;
-HAL_GPIO_Init(GPIOX_DATA, &GPIO_InitStruct);
+GPIO_InitStructure.GPIO_Pin = PIN_DATA;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOX_DATA, &GPIO_InitStructure);	
 ```
 
 ### 起始/停止信号
